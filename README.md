@@ -43,7 +43,7 @@ Make sure you save and require the MySQL and Inquirer npm packages in your homew
    * This means updating the SQL database to reflect the remaining quantity.
    * Once the update goes through, show the customer the total cost of their purchase.
 
-![Challenge #1](./assets/challenge1.gif)
+![Challenge #1](./assets/images/challenge1.gif)
 
 - - -
 
@@ -69,7 +69,7 @@ Make sure you save and require the MySQL and Inquirer npm packages in your homew
 
   * If a manager selects `Add New Product`, it should allow the manager to add a completely new product to the store.
 
-![Challenge #2](./assets/challenge2.gif)
+![Challenge #2](./assets/images/challenge2.gif)
 - - -
 
 ### Challenge #3: Supervisor View (Final Level)
@@ -111,5 +111,5 @@ Make sure you save and require the MySQL and Inquirer npm packages in your homew
 
    * **HINT**: There may be an NPM package that can log the table to the console. What's is it? Good question :)
 
-![Challenge #3](./assets/challenge3.gif)
+![Challenge #3](./assets/images/challenge3.gif)
 - - -
