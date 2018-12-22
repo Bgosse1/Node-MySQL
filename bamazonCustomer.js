@@ -84,22 +84,26 @@ function getProducts() {
 }
 
 function checkQty(id, userQty) {
-    connection.query("select products.item_id, products.stock_quantity from products where products.item_id = ?", [id], function (err, res) {
+    connection.query("select products.item_id, products.stock_quantity, products.price, products.product_sales from products where products.item_id = ?", [id], function (err, res) {
         if (err) throw err;
         let itemQty = res[0].stock_quantity;
+        let itemPrice = res[0].price;
+        let productSales = res[0].product_sales;
         if( itemQty < userQty){
             return console.log("Insufficient quantity!");
         }
         else{
             var qtyLeft = itemQty - userQty;
-            updateProductQty(id, qtyLeft);
+            productSales += (userQty * itemPrice);
+            console.log(productSales);
+            updateProductQty(id, qtyLeft, productSales);
         }
 
     });
 }
 
-function updateProductQty(id, qty){
-    connection.query("update products set products.stock_quantity = ? where products.item_id = ?", [qty, id], function (err, res) {
+function updateProductQty(id, qty, productSales){
+    connection.query("update products set products.stock_quantity = ?, products.product_sales = ? where products.item_id = ?", [qty, productSales, id], function (err, res) {
         if (err) throw err;
         connection.end();
         return console.log("updated store qty");
