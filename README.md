@@ -113,3 +113,9 @@ Make sure you save and require the MySQL and Inquirer npm packages in your homew
 
 ![Challenge #3](./assets/images/challenge3.gif)
 - - -
+
+To Run the project, First run the SQL script in MySql 
+
+Next Run npm install to get all the npm packages.
+
+Then you can run "node TheProjectName.js"
