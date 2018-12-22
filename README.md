@@ -43,6 +43,8 @@ Make sure you save and require the MySQL and Inquirer npm packages in your homew
    * This means updating the SQL database to reflect the remaining quantity.
    * Once the update goes through, show the customer the total cost of their purchase.
 
+![Challenge #1](./assets/images.gif)
+
 - - -
 
 ### Challenge #2: Manager View (Next Level)

@@ -29,8 +29,6 @@ function start() {
             choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product"]
         }
     ]).then(function (answer) {
-
-        // If the user guesses the password...
         switch (answer.action) {
             case "View Products for Sale":
                 getProducts();
@@ -47,16 +45,13 @@ function start() {
             default:
                 return console.log("Not A Valid Command")
         }
-
     });
-
 }
 
 function getProducts() {
     console.log("get products");
     connection.query("select products.item_id, products.product_name, products.price, products.stock_quantity from products", function (err, res) {
         if (err) throw err;
-        // Log all results of the SELECT statement
         for (var i = 0; i < res.length; i++) {
             console.log("Item ID: " + res[i].item_id);
             console.log("Name: " + res[i].product_name);
@@ -72,7 +67,6 @@ function getLowInventory() {
     console.log("Inventory less than 5");
     connection.query("select products.item_id, products.product_name, products.price, products.stock_quantity from products where products.stock_quantity < 5", function (err, res) {
         if (err) throw err;
-        // Log all results of the SELECT statement
         for (var i = 0; i < res.length; i++) {
             console.log("Item ID: " + res[i].item_id);
             console.log("Name: " + res[i].product_name);

@@ -90,12 +90,14 @@ function checkQty(id, userQty) {
         let itemPrice = res[0].price;
         let productSales = res[0].product_sales;
         if( itemQty < userQty){
-            return console.log("Insufficient quantity!");
+            console.log("Insufficient quantity!");
+            getProducts();
         }
         else{
             var qtyLeft = itemQty - userQty;
             productSales += (userQty * itemPrice);
-            console.log(productSales);
+            var totalSale = userQty * itemPrice;
+            console.log("Your total cost is: " + totalSale);
             updateProductQty(id, qtyLeft, productSales);
         }
 
